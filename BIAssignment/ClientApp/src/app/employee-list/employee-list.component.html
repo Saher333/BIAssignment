@@ -1,0 +1,22 @@
+<table class="table table-sm table-striped table-bordered table-hover text-center">
+  <thead class="table-primary">
+    <tr>
+      <th>Name</th>
+      <th>Date of Birth</th>
+      <th>Salary</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees | async | sort:'name'">
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.dob | date:'longDate' }}</td>
+      <td>{{ employee.salary }}</td>
+      <td><a style="cursor:pointer; color: #007bff;" [routerLink]='["/employee", "edit", employee.employeeId]'>Edit</a></td>
+      <td><a style="cursor:pointer; color: red;" (click)="onDelete(employee.employeeId)">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<button [routerLink]='["/"]' class="btn btn-info btn-lg">Home</button>
+<button [routerLink]='["/employee", "new"]' class="btn btn-success btn-lg">&nbsp; Add &nbsp;</button>

@@ -1,0 +1,12 @@
+button {
+  display: block;
+  margin: auto;
+}
+
+.btn-lg {
+  font-size: 1.50rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
+}
